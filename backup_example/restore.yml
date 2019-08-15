@@ -1,0 +1,16 @@
+---
+- name: network backup playbook
+  hosts: routers
+  gather_facts: false
+
+  vars:
+    # cli_config only works with network_cli
+    # *os_config specific modules can use multiple
+    # connection types (e.g. httpapi, netconf, etc)
+    ansible_connection: network_cli
+
+  tasks:
+
+    - name: perform agnostic restore
+      cli_config:
+        config: "{{ lookup('file', 'backup/{{inventory_hostname}}.cfg') }}"
