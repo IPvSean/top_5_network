@@ -1,0 +1,12 @@
+---
+- name: network backup playbook
+  hosts: routers
+  gather_facts: false
+  tasks:
+
+    - name: configurable backup path
+      cli_config:
+      backup: yes
+      backup_options:
+        filename: "{{inventory_host}}.cfg"
+        dir_path: ./
