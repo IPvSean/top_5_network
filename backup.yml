@@ -6,7 +6,7 @@
 
     - name: configurable backup path
       cli_config:
-      backup: yes
-      backup_options:
-        filename: "{{inventory_host}}.cfg"
-        dir_path: ./
+        backup: yes
+        backup_options:
+          filename: "{{inventory_host}}.cfg"
+          dir_path: ./
