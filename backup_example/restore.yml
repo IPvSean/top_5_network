@@ -10,12 +10,12 @@
     ansible_connection: network_cli
 
   tasks:
-      - name: remove non-config lines from Junos
-        lineinfile:
-          path: "backup/{{inventory_hostname}}.cfg"
-          regexp: 'version '
-          line: ''
-        when: ansible_network_os == "junos"
+    - name: remove non-config lines from Junos
+      lineinfile:
+        path: "backup/{{inventory_hostname}}.cfg"
+        regexp: 'version '
+        line: ''
+      when: ansible_network_os == "junos"
 
     - name: perform agnostic restore
       cli_config:
