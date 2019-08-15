@@ -16,4 +16,4 @@
         backup: yes
         backup_options:
           filename: "{{inventory_hostname}}.cfg"
-          dir_path: ./
+          dir_path: ./backup/
