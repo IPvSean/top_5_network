@@ -4,9 +4,9 @@
   gather_facts: false
   tasks:
 
-    - name: configurable backup path
+    - name: perform agnostic backup
       cli_config:
         backup: yes
         backup_options:
-          filename: "{{inventory_host}}.cfg"
+          filename: "{{inventory_hostname}}.cfg"
           dir_path: ./
